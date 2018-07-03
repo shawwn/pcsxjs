@@ -1,6 +1,7 @@
 set -x
 emcc  -g -Wpointer-sign -Wno-unused-result -O2 -o pcsx_gl.js -I./include -I./libpcsxcore -L/opt/X11/lib -I/opt/X11/include -I/opt/local/include \
 -D USESDLSOUND \
+-s LEGACY_GL_EMULATION=1 \
 gui/LnxMain.c gui/Plugin.c gui/Config.c \
 libpcsxcore/psxbios.c libpcsxcore/cdrom.c libpcsxcore/psxcounters.c \
 libpcsxcore/psxdma.c libpcsxcore/disr3000a.c libpcsxcore/spu.c libpcsxcore/sio.c \
