@@ -54,3 +54,4 @@ dkms.conf
 *.wast
 *.map
 
+node_modules
