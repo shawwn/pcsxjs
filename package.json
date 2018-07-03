@@ -7,7 +7,6 @@
   "license": "GPL",
   "scripts": {
     "start": "node index.js",
-    "test": "node index.js",
     "build": "bash ./buildall_gl_emcc"
   }
 }
