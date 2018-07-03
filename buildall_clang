@@ -1,3 +1,4 @@
+set -x
 clang  -g -Wpointer-sign -Wno-unused-result -O2 -o pcsx_clang -I./include -I./libpcsxcore \
 -D USESDLSOUND \
 gui/LnxMain.c gui/Plugin.c gui/Config.c \
@@ -13,7 +14,7 @@ plugins/dfxvideo/gpu.c   plugins/dfxvideo/soft_modified.c \
 plugins/dfsound/sdl.c plugins/dfsound/spu.c plugins/dfsound/cfg.c  plugins/dfsound/dma.c plugins/dfsound/registers.c \
 plugins/sdlinput/cfg.c     plugins/sdlinput/pad.c     plugins/sdlinput/xkb.c  \
 plugins/sdlinput/sdljoy.c plugins/sdlinput/analog.c \
- -lm -lSDL 
+ -lm -lSDL -lintl
 
 # plugins/nullspu/spunull.c \
 #plugins/dfsound/sdl.c plugins/dfsound/dma.c plugins/dfsound/freeze.c plugins/dfsound/cfg.c \
