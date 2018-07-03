@@ -1,5 +1,5 @@
 set -x
-clang  -g -Wpointer-sign -Wno-unused-result -O2 -o pcsx_gl -I./include -I./libpcsxcore -L/opt/X11/lib -I/opt/X11/include \
+emcc  -g -Wpointer-sign -Wno-unused-result -O2 -o pcsx_gl.js -I./include -I./libpcsxcore -L/opt/X11/lib -I/opt/X11/include -I/opt/local/include \
 -D USESDLSOUND \
 gui/LnxMain.c gui/Plugin.c gui/Config.c \
 libpcsxcore/psxbios.c libpcsxcore/cdrom.c libpcsxcore/psxcounters.c \
@@ -13,7 +13,7 @@ plugins/dfOpenGL/primitive_drawing.c  plugins/dfOpenGL/GPU.c  \
 plugins/dfsound/sdl.c plugins/dfsound/spu.c plugins/dfsound/cfg.c  plugins/dfsound/dma.c plugins/dfsound/registers.c \
 plugins/sdlinput/cfg.c     plugins/sdlinput/pad.c     plugins/sdlinput/xkb.c  \
 plugins/sdlinput/sdljoy.c plugins/sdlinput/analog.c \
- -lm -lSDL -lXxf86vm -lXext -lX11 -lGL -lintl
+ -lm -lSDL -lXxf86vm -lXext -lX11 -lGL
 
 # plugins/nullspu/spunull.c \
 #plugins/dfsound/sdl.c plugins/dfsound/dma.c plugins/dfsound/freeze.c plugins/dfsound/cfg.c \

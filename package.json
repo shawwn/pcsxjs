@@ -1,0 +1,13 @@
+{
+  "name": "pcsxjs",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tjwei/pcsxjs",
+  "author": "Shawn Presser <shawnpresser@gmail.com>",
+  "license": "GPL",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js",
+    "build": "bash ./buildall_gl_emcc"
+  }
+}
