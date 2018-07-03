@@ -26,7 +26,7 @@ plugins/sdlinput/sdljoy.o plugins/sdlinput/analog.o plugins/dfsound/sdl.o
 UI_FLAGS=--llvm-lto 1 -s EXPORTED_FUNCTIONS=$(UI_EXPORT) -s EXTRA_EXPORTED_RUNTIME_METHODS=$(WORKER_EXTRA) -s TOTAL_MEMORY=16777216
 
 
-all: pcsx_worker.js pcsx_ww.js
+all: pcsx_worker.min.js pcsx_ww.min.js
 
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
@@ -37,10 +37,10 @@ all: pcsx_worker.js pcsx_ww.js
 gui/xbrz.o: gui/xbrz.cpp gui/xbrz.h
 	$(CC) -c -o $@ $(CFLAGS) -x c++ -std=c++14 -DNDEBUG $<
 
-pcsx_worker.js: $(WORKER_OBJS) worker_funcs.js
+pcsx_worker.min.js: $(WORKER_OBJS) worker_funcs.js
 	$(CC) -o $@ $(CFLAGS) $(WORKER_OBJS) $(LDFLAGS) $(WORKER_FLAGS)
 
-pcsx_ww.js: $(UI_OBJS)
+pcsx_ww.min.js: $(UI_OBJS)
 	$(CC) -o $@ $(CFLAGS) $(UI_OBJS) $(LDFLAGS) $(UI_FLAGS)
 
 clean:

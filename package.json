@@ -8,9 +8,12 @@
   "scripts": {
     "start": "node index.js",
     "build:gl": "bash ./buildall_gl_emcc",
-    "build": "make -B && js-beautify pcsx_ww.js > pcsx_ww2.js && js-beautify pcsx_worker.js > pcsx_worker2.js"
+    "build": "make -B && npm run beautify",
+    "beautify": "js-beautify pcsx_ww.min.js > pcsx_ww.js && js-beautify pcsx_worker.min.js > pcsx_worker.js",
+    "serve": "simplehttpserver"
   },
   "dependencies": {
-    "js-beautify": "^1.7.5"
+    "js-beautify": "^1.7.5",
+    "simplehttpserver": "^0.1.1"
   }
 }

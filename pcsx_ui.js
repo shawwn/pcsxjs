@@ -160,7 +160,7 @@ function var_setup() {
   SDL.defaults.copyOnLock = false;
   SDL.defaults.opaqueFrontBuffer = false;
   cout_print("start worker")
-  pcsx_worker = new Worker("pcsx_worker2.js");
+  pcsx_worker = new Worker("pcsx_worker.js");
   pcsx_worker.onmessage = pcsx_worker_onmessage;
   document.getElementById('iso_opener').disabled=false;
   var spinner = document.getElementById('spinner');
